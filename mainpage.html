@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>界面示例</title>
+    <style>
+        /* 全局样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+
+        /* Banner 区域：改为相对定位，用于承载一言元素 */
+        .banner {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        .banner img {
+            width: 100%;
+            height: auto; /* 高度等比缩放 */
+            display: block;
+        }
+
+        /* 一言样式：黑色边框、白色填充，定位在左下角 */
+        .hitokoto-box {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background-color: #fff;
+            border: 2px solid #000;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 1.5;
+            max-width: 60%; /* 限制宽度避免遮挡图片 */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* 导航栏 */
+        .nav {
+            background-color: #f5f5f5;
+            padding: 10px;
+            overflow: hidden;
+        }
+        .nav-item {
+            float: left;
+            padding: 8px 15px;
+            margin: 5px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .nav-item:hover {
+            background-color: #e0e0e0;
+        }
+        /* 响应式换行 */
+        @media (max-width: 768px) {
+            .nav-item {
+                float: none;
+                display: inline-block;
+            }
+        }
+
+        /* 内容区域 */
+        .content {
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Banner 图片区域：新增一言容器 -->
+    <div class="banner">
+        <img src="https://picsum.photos/1200/400" alt="示例图片">
+        <div class="hitokoto-box" id="hitokoto">加载中...</div>
+    </div>
+
+    <!-- 导航栏 -->
+    <div class="nav" id="nav">
+        <div class="nav-item" onclick="showSection('section1')">home page主界面</div>
+        <div class="nav-item" onclick="showSection('section2')">界面2(班级文化）</div>
+        <div class="nav-item" onclick="showSection('section3')">界面3（公示/about)</div>
+        <div class="nav-item" onclick="showSection('section4')">界面4(联系站务）</div>
+    </div>
+
+    <!-- 内容区域 -->
+    <div class="content">
+        <div id="section1" class="section active">
+            <h2>鄂尔多斯市市一中伊旗校区512班官网（主界面）</h2>
+            <p>
+<div class="small-card">
+    <h3 class="small-card-title">鄂尔多斯市市一中伊旗校区512班官网:</h3>
+    <p class="small-card-content">作者：512班学生web前端技术自学小组</p>
+    <a href="./index.html" class="small-card-link">前往查看 →</a>
+</div>
+<style>
+.small-card {
+    width: 80%; /* 宽度略小，可按需调整百分比或固定值 */
+    max-width: 600px; /* 限制最大宽度，避免过宽 */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s;
+}
+.small-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+.small-card-title {
+    font-size: 18px; /* 与之前卡片字体大小一致 */
+    margin-bottom: 10px;
+    color: #333;
+}
+.small-card-content {
+    font-size: 14px; /* 保持统一文本大小 */
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+.small-card-link {
+    font-size: 14px; /* 链接字体大小不变 */
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.small-card-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+</style>此处删除
+<div class="carousel-container">
+    <div class="carousel-wrapper">
+        <div class="carousel-track">
+            <div class="carousel-item">
+                <img src="https://picsum.photos/800/400?1" alt="轮播图1">
+                <p class="carousel-desc">这是第一张图片的说明文字，可根据实际内容修改</p>
+            </div>
+            <div class="carousel-item">
+                <img src="https://picsum.photos/800/400?2" alt="轮播图2">
+                <p class="carousel-desc">这是第二张图片的说明文字，支持换行和长度调整</p>
+            </div>
+            <div class="carousel-item">
+                <img src="https://picsum.photos/800/400?3" alt="轮播图3">
+                <p class="carousel-desc">这是第三张图片的说明文字，保持与其他元素的样式统一</p>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+.carousel-container {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative;
+}
+.carousel-wrapper {
+    width: 100%;
+    overflow: hidden;
+    touch-action: pan-y; /* 避免触摸与浏览器滚动冲突 */
+}
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.carousel-item {
+    flex: 0 0 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+}
+.carousel-desc {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    padding: 0 2px;
+}
+</style>
+<script>
+// 全局变量统一声明
+const carouselWrapper = document.querySelector('.carousel-wrapper');
+const track = document.querySelector('.carousel-track');
+const items = document.querySelectorAll('.carousel-item');
+let itemWidth = items.length > 0 ? items[0].offsetWidth : 0;
+let currentIndex = 0;
+let autoPlayTimer = null; // 初始化定时器变量
+let startX = 0;
+let isDragging = false;
+
+// 窗口大小变化时更新图片宽度
+window.addEventListener('resize', () => {
+    itemWidth = items.length > 0 ? items[0].offsetWidth : 0;
+    updateCarousel();
+});
+
+// 自动轮播函数
+function startAutoPlay() {
+    // 防止重复创建定时器
+    if (autoPlayTimer) clearInterval(autoPlayTimer);
+    autoPlayTimer = setInterval(() => {
+        currentIndex = (currentIndex + 1) % items.length;
+        updateCarousel();
+    }, 3000); // 3秒切换一次，可调整时间
+}
+
+// 更新轮播位置
+function updateCarousel() {
+    if (track && itemWidth) {
+        track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    }
+}
+
+// 页面隐藏/显示时控制定时器（核心优化）
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+        clearInterval(autoPlayTimer); // 页面后台隐藏，暂停定时器
+    } else if (items.length > 0) {
+        startAutoPlay(); // 页面重新显示，恢复定时器
+    }
+});
+
+// 移动端触摸事件
+carouselWrapper.addEventListener('touchstart', (e) => {
+    clearInterval(autoPlayTimer);
+    startX = e.touches[0].clientX;
+});
+carouselWrapper.addEventListener('touchend', (e) => {
+    const endX = e.changedTouches[0].clientX;
+    const diffX = startX - endX;
+    // 滑动距离阈值50px，可调整
+    if (diffX > 50) {
+        currentIndex = (currentIndex + 1) % items.length;
+    } else if (diffX < -50) {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+    }
+    updateCarousel();
+    startAutoPlay();
+});
+
+// 桌面端鼠标拖拽事件
+carouselWrapper.addEventListener('mousedown', (e) => {
+    clearInterval(autoPlayTimer);
+    isDragging = true;
+    startX = e.clientX;
+    track.style.transition = 'none'; // 拖拽时取消过渡动画，更流畅
+});
+document.addEventListener('mousemove', (e) => {
+    if (!isDragging || !track) return;
+    const moveX = e.clientX - startX;
+    track.style.transform = `translateX(-${currentIndex * itemWidth - moveX}px)`;
+});
+document.addEventListener('mouseup', () => {
+    if (!isDragging) return;
+    isDragging = false;
+    track.style.transition = 'transform 0.5s ease'; // 结束拖拽恢复过渡动画
+    updateCarousel();
+    startAutoPlay();
+});
+
+// 初始化轮播
+if (items.length > 0) {
+    startAutoPlay();
+}
+</script>
+此处删除
+
+<div class="small-card">
+    <h3 class="small-card-title">最新公告</h3>
+    <p class="small-card-content">奶鸟（admin）：本地顺利建站test</p>
+    <a href="#" class="small-card-link">前往查看 →</a>
+</div>
+<style>
+.small-card {
+    width: 80%; /* 宽度略小，可按需调整百分比或固定值 */
+    max-width: 600px; /* 限制最大宽度，避免过宽 */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s;
+}
+.small-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+.small-card-title {
+    font-size: 18px; /* 与之前卡片字体大小一致 */
+    margin-bottom: 10px;
+    color: #333;
+}
+.small-card-content {
+    font-size: 14px; /* 保持统一文本大小 */
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+.small-card-link {
+    font-size: 14px; /* 链接字体大小不变 */
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.small-card-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+</style>
+<div class="small-card">
+    <h3 class="small-card-title">主鸣谢</h3>
+    <p class="small-card-content">感谢微软github page提供的在线托管</p>
+    <a href="https://github.com" class="small-card-link">github(部分软件打不开或时有卡死） →</a>
+</div>
+<style>
+.small-card {
+    width: 80%; /* 宽度略小，可按需调整百分比或固定值 */
+    max-width: 600px; /* 限制最大宽度，避免过宽 */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s;
+}
+.small-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+.small-card-title {
+    font-size: 18px; /* 与之前卡片字体大小一致 */
+    margin-bottom: 10px;
+    color: #333;
+}
+.small-card-content {
+    font-size: 14px; /* 保持统一文本大小 */
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+.small-card-link {
+    font-size: 14px; /* 链接字体大小不变 */
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.small-card-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+</style></p>
+        </div>
+        <div id="section2" class="section">
+            <h2>界面2内容</h2>
+            <p>界面2的专属内容区域，可自由编辑和扩展。</p>
+        </div>
+        <div id="section3" class="section">
+            <h2>界面3内容</h2>
+            <p>界面3的信息展示区域，支持多种排版方式。</p>
+        </div>
+        <div id="section4" class="section">
+            <h2>界面4内容</h2>
+            <p>界面4的内容板块，可根据实际需求填充信息。</p>
+        </div>
+    </div>
+
+    <script>
+        // 显示对应界面的函数
+        function showSection(sectionId) {
+            // 隐藏所有section
+            const sections = document.getElementsByClassName('section');
+            for (let i = 0; i < sections.length; i++) {
+                sections[i].classList.remove('active');
+            }
+            // 显示目标section
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        // 动态添加新界面的示例函数（可根据需求调用）
+        function addNewSection(sectionName) {
+            const nav = document.getElementById('nav');
+            const content = document.querySelector('.content');
+            const newId = 'section' + (document.getElementsByClassName('section').length + 1);
+            
+            // 添加导航项
+            const navItem = document.createElement('div');
+            navItem.className = 'nav-item';
+            navItem.innerHTML = sectionName;
+            navItem.onclick = function() {
+                showSection(newId);
+            };
+            nav.appendChild(navItem);
+
+            // 添加内容区域
+            const section = document.createElement('div');
+            section.id = newId;
+            section.className = 'section';
+            section.innerHTML = `
+                <h2>${sectionName}内容</h2>
+                <p>这是新增的${sectionName}界面内容，可自定义编辑。</p>
+            `;
+            content.appendChild(section);
+        }
+
+        // 示例：点击按钮可添加新界面（可取消注释测试）
+        // const addBtn = document.createElement('button');
+        // addBtn.style.margin = '20px';
+        // addBtn.innerHTML = '添加新界面';
+        // addBtn.onclick = function() {
+        //     addNewSection('新界面' + (document.getElementsByClassName('nav-item').length + 1));
+        // };
+        // document.body.appendChild(addBtn);
+
+        // 调用Hitokoto一言API获取内容
+        fetch('https://v1.hitokoto.cn?encode=text')
+            .then(response => {
+                if (!response.ok) throw new Error('请求失败');
+                return response.text();
+            })
+            .then(text => {
+                document.getElementById('hitokoto').innerText = text;
+            })
+            .catch(error => {
+                document.getElementById('hitokoto').innerText = '一言加载失败';
+            });
+    </script>
+</body>
+</html>
